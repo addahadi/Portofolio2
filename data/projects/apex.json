@@ -1,0 +1,42 @@
+{
+  "slug": "apex",
+  "title": "APEX",
+  "shortDescription": "Web + mobile platform for construction cost estimation, built by a 30-developer team I led end to end.",
+  "fullDescription": "APEX is a web + mobile platform for construction cost estimation and works management, built as a final-year graduate project by a team of ~30 developers across 12 specialized subgroups. I led the project end to end — dividing modules, setting the technology stack, onboarding the whole team on Git and UML, and running every design review — while personally owning the Frontend/Backend/Template architecture: the shared skeleton (routing, component standards, API conventions, error handling, and auth) that all twelve groups built on. The platform lets construction professionals manage multiple projects, run automated cost estimations through a hierarchical 29-node category tree with a formula editor, chat with an AI assistant, manage subscriptions, and export client-ready PDF estimates — all bilingual in Arabic and English with full RTL support. The web app is React + Express + Supabase; the companion mobile app is React Native + Expo for iOS and Android, sharing the same backend.",
+  "problem": "In Algeria, construction cost estimation is still done by hand — in personal Excel templates or on paper — especially on-site where office software isn't available. These methods are slow, error-prone, and completely non-standardized: estimates can't be compared or audited, volatile material prices are painful to update, and mistakes surface late as costly budget overruns.",
+  "solution": "APEX digitizes the whole estimation workflow: professionals enter quantities and unit prices once and the system computes partial and total costs in real time, propagates price updates everywhere automatically, manages multiple projects per account, and exports professional PDF estimates. A bilingual (Arabic/English) interface, an AI conversational assistant, and a companion mobile app make it usable both in the office and on the construction site.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "Express.js",
+    "Supabase",
+    "React Native",
+    "Node.js",
+    "PostgreSQL",
+    "Expo",
+    "JWT",
+    "REST API"
+  ],
+  "thumbnail": "https://placehold.co/800x450/1A56DB/FFFFFF?text=APEX",
+  "screenshots": [
+    "https://placehold.co/1200x675/0F172A/FFFFFF?text=Landing+Page",
+    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=User+Dashboard",
+    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=Estimation+Category+Tree",
+    "https://placehold.co/1200x675/0F172A/FFFFFF?text=Admin+Formula+Editor",
+    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=Mobile+App+%28Expo%29"
+  ],
+  "liveUrl": "https://apex-ochre-gamma.vercel.app",
+  "repoUrl": "https://github.com/addahadi/APEX",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Academic",
+  "role": "Project Lead · Frontend/Backend Architect",
+  "impact": [
+    "Led a 30-developer team across 12 specialized subgroups — owning module division, tech-stack decisions, and Git/UML onboarding for the entire team.",
+    "Personally built the Frontend/Backend/Template architecture: the shared routing, component standards, API conventions, and error-handling skeleton every other group depended on.",
+    "Engineered the shared API client with automatic JWT refresh on 401, 5xx retry, and unified error normalization, plus the auth context and token-refresh flow.",
+    "Delivered full bilingual (Arabic/English) support with RTL synchronization, an animated GSAP landing page, and an admin panel with a 29-node estimation category tree and leaf-level formula editor.",
+    "Shipped a live web app (React/Express/Supabase) and a cross-platform mobile app (React Native + Expo, iOS + Android) sharing one backend."
+  ],
+  "featuredMetric": { "value": "Led 30 devs", "label": "12 teams · 1 platform" }
+}

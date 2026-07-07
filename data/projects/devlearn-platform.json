@@ -1,0 +1,38 @@
+{
+  "slug": "devlearn-platform",
+  "title": "DevLearn Platform",
+  "shortDescription": "Interactive web development course platform with progress tracking.",
+  "fullDescription": "A learning management system built for web development courses. Features include structured course modules, video embedding, code sandboxes, progress persistence, and a clean reading-optimized UI. Used to deliver HTML/CSS/JavaScript course content.",
+  "problem": "Existing platforms like Udemy lack the flexibility for custom interactive exercises and code challenges tied to specific lesson content.",
+  "solution": "A custom LMS with MDX-powered lesson content, embedded code sandboxes, and a progress tracker stored in the database per user.",
+  "category": "Web App",
+  "tags": [
+    "Next.js",
+    "React",
+    "MDX",
+    "PostgreSQL",
+    "Prisma",
+    "Tailwind CSS"
+  ],
+  "thumbnail": "https://placehold.co/800x450/1a1a2e/AAFF00?text=DevLearn",
+  "screenshots": [
+    "https://placehold.co/1200x675/1a1a2e/AAFF00?text=Course+View",
+    "https://placehold.co/1200x675/111/888?text=Code+Editor"
+  ],
+  "liveUrl": "REPLACE_ME",
+  "repoUrl": "REPLACE_ME",
+  "featured": false,
+  "year": 2024,
+  "projectType": "Personal",
+  "role": "Solo Developer",
+  "duration": "TODO: e.g. 4 weeks",
+  "impact": [
+    "TODO: e.g. Delivered a full HTML/CSS/JS curriculum",
+    "TODO: e.g. Used by N students / learners"
+  ],
+  "featuredMetric": {
+    "value": "Custom LMS",
+    "label": "built from scratch"
+  },
+  "testimonialId": "t4"
+}

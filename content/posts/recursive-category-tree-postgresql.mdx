@@ -1,0 +1,124 @@
+---
+title: "Building a Recursive Category Tree in PostgreSQL: Lessons from QuantiConstruct"
+date: "2025-04-22"
+readTime: "9 min read"
+category: "Database"
+excerpt: "Building a construction estimation platform taught me how to model infinite-depth category hierarchies in PostgreSQL using adjacency lists and recursive CTEs — and where each approach breaks down."
+tags: ["postgresql", "sql", "backend", "typescript", "database"]
+---
+
+## The Problem: An Infinite Tree
+
+When I started building QuantiConstruct, the first real modeling challenge was the category tree. A construction project breaks down into categories — Civil Works → Foundations → Concrete Works → Reinforced Slab, for example — and the depth is **arbitrary**. Users define their own hierarchy.
+
+There are three common ways to model a hierarchy in a relational database:
+
+1. **Adjacency List** — each row stores its parent's ID
+2. **Nested Set** — each row stores left/right boundary values
+3. **Closure Table** — a separate table stores all ancestor/descendant pairs
+
+I went with the adjacency list. Here's why, and where the tradeoff bites.
+
+## The Schema
+
+```sql
+CREATE TABLE categories (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name_fr     TEXT NOT NULL,
+  name_ar     TEXT NOT NULL,
+  parent_id   UUID REFERENCES categories(id) ON DELETE CASCADE,
+  formula     TEXT,           -- null for non-leaf nodes
+  formula_type ENUM('NON_MATERIAL', 'MATERIAL'),
+  "order"     INTEGER NOT NULL DEFAULT 0,
+  created_at  TIMESTAMPTZ DEFAULT now()
+);
+```
+
+A root category has `parent_id = NULL`. Everything else points to its parent.
+
+## Querying the Whole Tree with a Recursive CTE
+
+The adjacency list is simple to insert and update, but querying the full tree naively requires `N+1` queries. The PostgreSQL solution is a **recursive CTE**.
+
+```sql
+WITH RECURSIVE tree AS (
+  -- Base case: root nodes
+  SELECT
+    id, name_fr, name_ar, parent_id, formula_type,
+    1 AS depth,
+    ARRAY[id] AS path
+  FROM categories
+  WHERE parent_id IS NULL
+
+  UNION ALL
+
+  -- Recursive case: children
+  SELECT
+    c.id, c.name_fr, c.name_ar, c.parent_id, c.formula_type,
+    tree.depth + 1,
+    tree.path || c.id
+  FROM categories c
+  JOIN tree ON c.parent_id = tree.id
+)
+SELECT * FROM tree ORDER BY path;
+```
+
+This returns the entire tree in a single query, with each row tagged with its `depth` and `path` (an array of ancestor IDs). The `path` column makes it trivial to compute breadcrumbs on the frontend.
+
+## Finding Only Leaf Nodes
+
+A leaf node is any category that has no children. These are the ones that have formulas and get included in estimation calculations.
+
+```sql
+SELECT c.*
+FROM categories c
+WHERE NOT EXISTS (
+  SELECT 1 FROM categories child WHERE child.parent_id = c.id
+);
+```
+
+In the TypeScript layer, I use a simpler version: build the full tree in memory once, then traverse it to collect leaves. At the scale of a construction project (typically under 500 nodes), this is faster than multiple round-trips.
+
+## The Calculation Engine
+
+Once I had the leaves, the estimation engine needed to evaluate formulas. Each leaf has a `formula` string like:
+
+```
+length * width * unit_price
+```
+
+where `length`, `width`, and `unit_price` are variables that the user fills in for a specific project.
+
+The TypeScript evaluator uses a safe expression parser (no `eval`) and gracefully skips unresolvable formulas:
+
+```typescript
+function evaluateFormula(
+  formula: string,
+  variables: Record<string, number>
+): number | null {
+  try {
+    const resolved = formula.replace(
+      /\b([a-z_][a-z0-9_]*)\b/gi,
+      (match) => {
+        if (variables[match] === undefined) throw new Error(`Unresolved: ${match}`);
+        return String(variables[match]);
+      }
+    );
+    return Function('"use strict"; return (' + resolved + ')')();
+  } catch {
+    return null; // graceful skip — MATERIAL formula awaiting user input
+  }
+}
+```
+
+The graceful skip matters: MATERIAL formulas depend on real-world unit prices that aren't available until the user enters them. Returning `null` instead of throwing keeps the total budget calculation running even when some leaves are incomplete.
+
+## What I'd Do Differently
+
+The adjacency list works well for most operations, but **subtree deletion** requires careful `ON DELETE CASCADE` setup, and deep reads require the recursive CTE. If the app ever needed to display the subtree under a specific node frequently (not just the full tree), a **closure table** would be more efficient.
+
+For QuantiConstruct, the full-tree-once approach is the right call. The tree is small, changes rarely, and the recursive CTE executes in single-digit milliseconds.
+
+---
+
+The real insight from this project: pick the simplest model that handles your read pattern. The adjacency list handles QuantiConstruct's pattern (build tree once per page load) perfectly. Don't over-engineer the schema before you understand the queries.

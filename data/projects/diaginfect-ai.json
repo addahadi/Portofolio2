@@ -1,0 +1,45 @@
+{
+  "slug": "diaginfect-ai",
+  "title": "DiagInfect-AI",
+  "shortDescription": "Multi-tenant SaaS that gives doctors an early, explainable AI infection-risk score from routine lab data.",
+  "fullDescription": "DiagInfect-AI is a co-founded Algerian health-tech startup — a full-stack TypeScript platform that connects doctors, lab technicians, and hospital managers around an AI pipeline for early infectious-disease risk assessment. Hospitals self-onboard, invite staff by email, and work inside three role-specific dashboards. Doctors register patients and record vitals, lab technicians enter routine results (CRP, CBC, ESR, temperature), and the platform returns an infection-risk score with an explainable-AI breakdown of the factors behind it — before slow culture results come back. The system is fully multi-tenant, with organizations, subscription tiers, trial limits, and automatic overage billing. I lead the software: the entire full-stack build plus the AI-service integration layer, working alongside a biology teammate for clinical domain expertise and an AI supervisor for the prediction models.",
+  "problem": "Bacterial infections are often diagnosed late because microbiological culture tests are slow and interpretation depends on scarce specialist expertise. The delay pushes clinicians toward late treatment and antibiotic overuse — a serious problem in low-resource hospitals that can't afford fast molecular diagnostics.",
+  "solution": "A multi-tenant web platform where lab techs enter routine, low-cost results and doctors get an early infection-risk score with explainable factors — faster than culture and cheaper than molecular tests. Built with role-based dashboards for doctors, lab technicians, and hospital managers, plus organization onboarding, subscription enforcement, and usage/overage tracking for institutions.",
+  "category": "AI/ML",
+  "tags": [
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Supabase",
+    "JWT",
+    "Tailwind CSS",
+    "AI/ML",
+    "REST API"
+  ],
+  "thumbnail": "https://placehold.co/800x450/1e5aa8/FFFFFF?text=DiagInfect-AI",
+  "screenshots": [
+    "https://placehold.co/1200x675/1e5aa8/FFFFFF?text=Landing+Page",
+    "https://placehold.co/1200x675/104ED8/FFFFFF?text=Doctor+Dashboard",
+    "https://placehold.co/1200x675/2e7d32/FFFFFF?text=AI+Risk+Score+%2B+XAI",
+    "https://placehold.co/1200x675/1e5aa8/FFFFFF?text=Manager+Subscription"
+  ],
+  "liveUrl": "https://diainfectai.vercel.app",
+  "repoUrl": "https://github.com/addahadi/DiaInfect",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Startup",
+  "role": "Co-founder · Full-Stack & AI Integration",
+  "impact": [
+    "Shipped a complete multi-tenant SaaS: organization onboarding, email staff invitations, and three role-based dashboards (doctor, lab technician, hospital manager).",
+    "Built the full REST API across 8 domains with JWT auth (access + rotating refresh tokens, token blacklist), role-based access control, and subscription enforcement.",
+    "Implemented an explainable-AI prediction flow that surfaces the factors behind each infection-risk score, so clinicians can trust and interpret the result.",
+    "Designed a subscription engine with trial limits, upgrade prompts, and automatic overage billing for paid institutions.",
+    "Live on Vercel; the software platform is deployed while the clinical AI models are at proof-of-concept / pilot-validation stage (TRL 3–4)."
+  ],
+  "featuredMetric": {
+    "value": "Multi-tenant",
+    "label": "clinical SaaS, live"
+  }
+}

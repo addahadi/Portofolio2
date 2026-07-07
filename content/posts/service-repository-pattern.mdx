@@ -1,0 +1,102 @@
+---
+title: "Why I Moved From REST to a Service/Repository Pattern (And Never Looked Back)"
+date: "2025-05-10"
+readTime: "7 min read"
+category: "Architecture"
+excerpt: "After shipping two production APIs, I learned the hard way that controllers doing database queries is a trap. Here's the pattern that saved my codebase."
+tags: ["nodejs", "architecture", "backend", "typescript"]
+---
+
+## The Problem With Fat Controllers
+
+When you're building your first API, it's tempting to put everything in the controller. It works. The request comes in, you query the database, you send the response. Simple, right?
+
+Until it isn't.
+
+After three months maintaining a controller file that had grown to 600 lines, I started noticing the pain:
+
+- **Untestable business logic** — to test a feature, I had to mock the request, response, and database all at once.
+- **Duplicated queries** — the same database pattern copy-pasted in five different controllers.
+- **Zero separation** — if the database changed, every controller changed.
+
+The fix was introducing two distinct layers: a **Repository** and a **Service**.
+
+## The Pattern
+
+```
+app/
+├── controllers/     ← HTTP layer: parse request, call service, return response
+├── services/        ← Business logic: orchestrate repositories, enforce rules
+├── repositories/    ← Data access: all database queries live here
+└── models/          ← Type definitions
+```
+
+### The Repository
+
+A repository is a class whose only job is to talk to the database. It knows nothing about HTTP, business rules, or the rest of your application.
+
+```typescript
+// repositories/user.repository.ts
+export class UserRepository {
+  async findById(id: string): Promise<User | null> {
+    return db.query('SELECT * FROM users WHERE id = $1', [id]);
+  }
+
+  async create(data: CreateUserDto): Promise<User> {
+    return db.query(
+      'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING *',
+      [data.email, data.passwordHash]
+    );
+  }
+}
+```
+
+### The Service
+
+The service orchestrates repositories and contains the actual business logic.
+
+```typescript
+// services/auth.service.ts
+export class AuthService {
+  constructor(private userRepo: UserRepository) {}
+
+  async register(email: string, password: string): Promise<User> {
+    const existing = await this.userRepo.findByEmail(email);
+    if (existing) throw new ConflictError('Email already in use');
+
+    const hash = await bcrypt.hash(password, 12);
+    return this.userRepo.create({ email, passwordHash: hash });
+  }
+}
+```
+
+### The Controller
+
+The controller becomes a thin HTTP adapter — it validates input, calls the service, and maps the result to an HTTP response.
+
+```typescript
+// controllers/auth.controller.ts
+export async function register(req: Request, res: Response) {
+  const { email, password } = req.body;
+  const user = await authService.register(email, password);
+  return res.status(201).json({ user });
+}
+```
+
+## What I Gained
+
+After refactoring both projects to this pattern:
+
+1. **Testing became trivial** — I can test the service with a mocked repository, zero HTTP overhead.
+2. **Database changes are isolated** — when I switched a query from raw SQL to a query builder, zero controllers changed.
+3. **Readable code** — reading a service tells you the business rules. Reading a controller tells you the HTTP contract.
+
+The extra files are worth it. Every time.
+
+## When Not To Use It
+
+This is overhead for tiny scripts or CLIs. For a 3-route toy API, a fat controller is fine. The pattern pays dividends at scale — roughly when you hit 5+ entities or when multiple parts of the app need the same data access.
+
+---
+
+The clearest signal you need this refactor? When you catch yourself writing `pool.query(...)` inside a route handler.

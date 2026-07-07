@@ -1,0 +1,39 @@
+{
+  "slug": "inventory-api",
+  "title": "Inventory Management API",
+  "shortDescription": "RESTful API for multi-warehouse inventory management.",
+  "fullDescription": "A production-grade REST API for managing inventory across multiple warehouses. Features include JWT authentication with refresh token rotation, role-based access control, batch operations, audit logging, and full stock movement history.",
+  "problem": "The client had a legacy inventory system with no API, making integrations with e-commerce platforms impossible.",
+  "solution": "A clean Express/Node.js REST API with OpenAPI documentation, comprehensive test coverage, and a migration path from the legacy system.",
+  "category": "API",
+  "tags": [
+    "Node.js",
+    "Express",
+    "TypeScript",
+    "PostgreSQL",
+    "JWT",
+    "Swagger"
+  ],
+  "thumbnail": "https://placehold.co/800x450/0f0f0f/AAFF00?text=Inventory+API",
+  "screenshots": [
+    "https://placehold.co/1200x675/0f0f0f/AAFF00?text=Swagger+Docs",
+    "https://placehold.co/1200x675/111/888?text=Dashboard"
+  ],
+  "liveUrl": "REPLACE_ME",
+  "repoUrl": "https://github.com/rayanhamdi/inventory-api",
+  "featured": false,
+  "year": 2024,
+  "projectType": "Client",
+  "role": "Backend Developer",
+  "duration": "2 weeks",
+  "impact": [
+    "TODO: e.g. Delivered in a 2-week sprint, fully documented",
+    "TODO: e.g. Enabled e-commerce integrations previously impossible",
+    "TODO: e.g. Full OpenAPI/Swagger docs + test coverage"
+  ],
+  "featuredMetric": {
+    "value": "2 weeks",
+    "label": "sprint delivery"
+  },
+  "testimonialId": "t3"
+}

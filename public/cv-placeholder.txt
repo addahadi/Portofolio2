@@ -1,0 +1,3 @@
+Place your cv.pdf file here.
+Path: /public/cv.pdf
+This file will be served at /cv.pdf for download.

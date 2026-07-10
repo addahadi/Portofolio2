@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 
 export default function FeaturedProjects() {
-  const featured = projects.filter((p) => p.featured).slice(0, 2);
+  const featured = projects.filter((p) => p.featured).slice(0, 3);
   if (featured.length === 0) return null;
 
   return (
@@ -33,7 +33,7 @@ export default function FeaturedProjects() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
           {featured.map((p) => (
             <ProjectCard key={p.slug} project={p} featured />
           ))}

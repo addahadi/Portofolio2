@@ -1,0 +1,42 @@
+{
+  "slug": "story-website",
+  "title": "StoryGen",
+  "shortDescription": "A story-writing and reading platform with an AI co-writing assistant — a side project for sharpening full-stack skills.",
+  "fullDescription": "StoryGen is a personal side project built to push my React and full-stack skills on something more open-ended than a typical CRUD app. It's a platform for writing and reading multi-chapter stories: authors write in a rich-text editor and can select any passage to get AI-generated plot suggestions — next scenes, dialogue, twists, or subplots, tuned by length and genre — powered by Google's Gemini API. Readers can browse stories by genre, follow a feed, and read chapter by chapter. The app uses Firebase for authentication and data (stories, chapters, users) and Cloudinary for image handling, with animations via GSAP and Framer Motion.",
+  "problem": "Building only guided, well-specified projects (client work, coursework) doesn't force growth in the same way as an open-ended personal idea — there's no fixed spec to lean on, so every architectural and product decision has to be made from scratch.",
+  "solution": "A self-directed story platform combining a rich-text authoring experience with an AI writing-assistant feature, giving me room to practice React architecture, third-party API integration (Gemini, Firebase, Cloudinary), and product decisions outside of a client brief.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Firebase",
+    "Gemini API",
+    "Lexical",
+    "Cloudinary",
+    "Tailwind CSS",
+    "GSAP",
+    "Framer Motion"
+  ],
+  "thumbnail": "/project_imgs/story_website_landing_page.png",
+  "screenshots": [
+    "/project_imgs/story_website_landing_page.png",
+    "/project_imgs/story_website_home.png",
+    "/project_imgs/story_website_browse.png",
+    "/project_imgs/story_website_detail_page.png",
+    "/project_imgs/story_website_write.png"
+  ],
+  "liveUrl": "https://story-website-xi.vercel.app/",
+  "repoUrl": "https://github.com/addahadi/Story-Website",
+  "featured": false,
+  "year": 2025,
+  "projectType": "Personal",
+  "role": "Solo Developer",
+  "impact": [
+    "Built an AI writing-assistant feature that generates plot suggestions from any selected passage, tunable by length, scene type, and genre, using the Gemini API.",
+    "Integrated a rich-text story editor (Lexical) supporting multi-chapter stories stored and queried in Firebase/Firestore.",
+    "Built genre-based browsing, a story feed, and a chapter-by-chapter reading experience.",
+    "Used this project to get hands-on with third-party API integration and product decisions outside of a fixed client spec."
+  ],
+  "featuredMetric": { "value": "AI-assisted", "label": "writing & reading platform" }
+}

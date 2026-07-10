@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import About from "@/components/About";
-import TestimonialsStrip from "@/components/TestimonialsStrip";
+// import TestimonialsStrip from "@/components/TestimonialsStrip";
 import FreelanceCTA from "@/components/FreelanceCTA";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Hero />
       <FeaturedProjects />
       <About />
-      <TestimonialsStrip />
+      {/* <TestimonialsStrip /> */}
       <FreelanceCTA />
     </>
   );

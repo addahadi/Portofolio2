@@ -1,0 +1,38 @@
+{
+  "slug": "gdg-events-platform",
+  "title": "GDG Algiers Events Platform",
+  "shortDescription": "Full event-management platform for GDG Algiers, coordinating managers, organizers, volunteers, and admins around every event.",
+  "fullDescription": "The Events Platform is an internal tool built for GDG Algiers (Google Developer Groups Algiers) to run its events end to end, with four distinct roles working together: admins overseeing the whole system, managers running the show, organizers handling day-to-day event logistics, and volunteers supporting on the ground. As a member of the community, I joined the frontend team and built the authentication and access-control system that the rest of the app relies on — handling login, session/token management, and making sure each of the four roles only sees and can do what they're supposed to. It's an active, ongoing project that the community continues to build on for its events.",
+  "problem": "Running community events with several people in different roles (management, organizing, volunteering) usually means juggling spreadsheets, group chats, and ad-hoc access — it's hard to keep track of who can do what, and easy for coordination to break down as the team and event list grow.",
+  "solution": "A single platform where every role — admin, manager, organizer, and volunteer — logs in through one properly secured system and only sees the tools relevant to their job, making event coordination centralized instead of scattered across chats and spreadsheets.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Axios",
+    "Zod",
+    "React Context",
+    "React Query",
+    "Role-Based Access Control",
+    "REST API"
+  ],
+  "thumbnail": "/project_imgs/gdg_event_agenda.png",
+  "screenshots": [
+    "/project_imgs/gdg_event_agenda.png",
+    "/project_imgs/gdg_event_meals.png",
+    "/project_imgs/gdg_event_tasks.png"
+  ],
+  "liveUrl": "REPLACE_ME",
+  "repoUrl": "https://github.com/GDGAlgiers/events-platform-frontend",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Community",
+  "role": "Frontend Developer · GDG Algiers Member",
+  "impact": [
+    "Built the platform's full authentication system from scratch, including secure login and token/session handling with Axios.",
+    "Implemented role-based access control across four distinct user roles (Admin, Manager, Organizer, Volunteer), so every user sees only what's relevant to their job.",
+    "Used Zod for request/response validation and React Query for data fetching and caching, keeping the auth flow reliable and consistent across the app.",
+    "Contributed as a community member on an active, ongoing platform still used by GDG Algiers to run its events."
+  ],
+  "featuredMetric": { "value": "4 roles", "label": "auth & access control system" }
+}

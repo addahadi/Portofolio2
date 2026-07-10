@@ -1,0 +1,38 @@
+{
+  "slug": "cybernexus-website",
+  "title": "CyberNexus Club Website",
+  "shortDescription": "The official website for CyberNexus, a university cybersecurity club — showcasing the team, running workshop signups, and hosting learning materials.",
+  "fullDescription": "CyberNexus is a university cybersecurity club running workshops, CTFs, and training for students, and this site is its public home. Visitors get a landing page introducing the club and its departments, a full team directory organized by department with expandable member cards, and a dedicated Workshops page where students can browse upcoming sessions by category (frontend, backend, AI, networking, and more), enroll directly, and download workshop materials once they've signed up. I'm part of the development team building the site — as well as being a Performance Supervisor on the HR side of the club — and I've also run sessions myself, instructing the club's Frontend Development workshop.",
+  "problem": "A student club running recurring workshops and a growing team needs a public face that does more than list contact info — members need a clear way to see who's who across departments, and students need an easy way to discover, sign up for, and get materials from workshops without relying on group chats or spreadsheets.",
+  "solution": "A single site combining a team directory organized by department, a workshop catalog with live enrollment (backed by Supabase) and email confirmations, and a materials system so students can access session resources after signing up — all wrapped in an animated, cybersecurity-themed interface built with React and GSAP.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Supabase",
+    "Tailwind CSS",
+    "GSAP",
+    "EmailJS",
+    "Radix UI"
+  ],
+  "thumbnail": "/project_imgs/cybernexus_landing.png",
+  "screenshots": [
+    "/project_imgs/cybernexus_landing.png",
+    "/project_imgs/cybernexus_gettouch.png",
+    "/project_imgs/cybernexus_workshop.png"
+  ],
+  "liveUrl": "https://cybernexusdz.vercel.app/",
+  "repoUrl": "https://github.com/cybernexusdz/cybernexus_website",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Community",
+  "role": "Developer · Performance Supervisor (HR) · Workshop Instructor",
+  "impact": [
+    "Contributed to the club's official website as part of the development team, working alongside other student developers under shared coding standards and a PR-based contribution workflow.",
+    "Built out features on the Workshops page, including Supabase-backed enrollment, category-based browsing, and a gated materials upload/download system for session resources.",
+    "Serve as Performance Supervisor on the club's HR team, alongside my development contributions.",
+    "Instructed the club's Frontend Development workshop, teaching HTML/CSS/JavaScript fundamentals to fellow students."
+  ],
+  "featuredMetric": { "value": "Dev + HR", "label": "contributor & workshop instructor" }
+}

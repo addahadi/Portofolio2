@@ -17,7 +17,7 @@ export interface Project {
   repoUrl: string;
   featured: boolean;
   year: number;
-  projectType: "Client" | "Personal" | "Startup";
+  projectType: "Client" | "Personal" | "Startup" | "Community" | "Academic" ;
   role: string;
   duration?: string;
   impact?: string[];
@@ -93,7 +93,7 @@ export interface BlogPost {
 
 // ── Books ───────────────────────────────────────────────────────────────────
 
-export type BookCategory = "Tech" | "Architecture" | "Leadership" | "Product" | "Self-Development";
+export type BookCategory = "Computer Science" | "Philosophy";
 
 export interface Book {
   id: string;

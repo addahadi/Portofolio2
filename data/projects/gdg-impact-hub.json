@@ -1,0 +1,37 @@
+{
+  "slug": "gdg-impact-hub",
+  "title": "GDG Impact Hub",
+  "shortDescription": "A platform connecting community members to social-impact projects and mentors — built in a GDG Algiers competition and awarded Best Idea.",
+  "fullDescription": "GDG Impact Hub is a platform that connects people who want to contribute to social-impact projects (technology, healthcare, education, environment, social causes) with the teams running them and the mentors who can guide them. Members can browse a project gallery, vote on ideas, and apply to join a project's team; project owners and leads get a dashboard to review join requests, manage their team, and post updates or open positions; and a mentorship system lets mentors offer expertise, take on project assignments, and run 1:1 or broadcast sessions with structured feedback. My team and I built this from scratch during a competition organized by GDG Algiers, and the idea won Best Idea among all teams. I worked on the authentication side of the platform — login, registration, password recovery, and the user profile page.",
+  "problem": "People who want to contribute skills to social-impact projects, and the teams running those projects, usually have no dedicated place to find each other — team formation happens informally through chats and word of mouth, mentorship is ad hoc, and there's no structured way to track project progress, team roles, or the guidance mentors are giving along the way.",
+  "solution": "A single hub where project teams post what they're building and what help they need, contributors discover and apply to join with their skills and motivation, project leads manage their team and communicate through announcements, and mentors connect with projects to offer structured guidance and feedback — all organized by role (owner, lead, contributor, mentor, admin).",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "React Router",
+    "Tailwind CSS",
+    "Radix UI",
+    "React Hook Form",
+    "Zod",
+    "Server-Side Rendering"
+  ],
+  "thumbnail": "/project_imgs/gdg_impact_hub.png",
+  "screenshots": [
+    "/project_imgs/gdg_impact_hub.png"
+  ],
+  "liveUrl": "REPLACE_ME",
+  "repoUrl": "https://github.com/z-sohaib/gdg-impact-hub-frontend",
+  "featured": true,
+  "year": 2025,
+  "projectType": "Community",
+  "role": "Team Member · Authentication Developer",
+  "duration": "Competition build",
+  "impact": [
+    "Won Best Idea among all competing teams in a hackathon-style competition organized by GDG Algiers.",
+    "Built the platform's authentication system: login, registration, forgot-password flow, and the user profile page, along with the auth context and API integration wiring it together.",
+    "Contributed shared UI primitives (form, card, avatar, badge, and more) used across the app.",
+    "Worked as part of a small team delivering a full-featured platform under competition time constraints, including project discovery, team management, and a mentorship system."
+  ],
+  "featuredMetric": { "value": "🏆 Best Idea", "label": "GDG Algiers competition" }
+}

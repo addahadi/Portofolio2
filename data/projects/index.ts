@@ -6,16 +6,26 @@ import type { Project, ProjectCategory } from "@/types";
 // The JSON shape must match the `Project` interface in types/index.ts.
 import diaginfectAi from "./diaginfect-ai.json";
 import apex from "./apex.json";
-import devlearnPlatform from "./devlearn-platform.json";
-import inventoryApi from "./inventory-api.json";
+import devlevelup from "./devlevelup.json";
+import municipalityMatters from "./municipality-matters.json";
+import gdgEventsPlatform from "./gdg-events-platform.json";
+import gdgImpactHub from "./gdg-impact-hub.json";
+import intelligentEquipmentRefurbishment from "./intelligent-equipment-refurbishment.json";
+import storyWebsite from "./story-website.json";
+import cybernexusWebsite from "./cybernexus-website.json";
 
 // Order here is the default/source order. Featured-first ordering for display
 // is handled in the UI (ProjectsGrid / FeaturedProjects).
 export const projects: Project[] = [
   diaginfectAi,
   apex,
-  devlearnPlatform,
-  inventoryApi,
+  gdgEventsPlatform,
+  municipalityMatters,
+  gdgImpactHub,
+  devlevelup,
+  cybernexusWebsite,
+  intelligentEquipmentRefurbishment,
+  storyWebsite,
 ] as Project[];
 
 export const projectCategories: readonly ProjectCategory[] = [

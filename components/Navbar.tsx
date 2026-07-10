@@ -12,9 +12,9 @@ const navLinks = [
   { label: "Skills", href: "/skills" },
   { label: "Projects", href: "/projects" },
   { label: "Experience", href: "/experience" },
-  { label: "Testimonials", href: "/testimonials" },
+  // { label: "Testimonials", href: "/testimonials" },
   { label: "Books", href: "/books" },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -41,8 +41,8 @@ export default function Navbar() {
   const handleDownloadCV = () => {
     setDownloading(true);
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
-    link.download = "CV.pdf";
+    link.href = "/cv.docx";
+    link.download = "CV_Missoum_Hadi_Adda.docx";
     link.click();
     setTimeout(() => setDownloading(false), 1500);
   };

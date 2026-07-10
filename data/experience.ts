@@ -1,83 +1,68 @@
 import type { ExperienceEntry } from "@/types";
 
-// TODO: Replace mock experience with your real work history and education before launch
 export const experience: ExperienceEntry[] = [
   // ── Work ────────────────────────────────────────────────────────────────
   {
     id: "freelance-2025",
     type: "work",
     role: "Freelance Full-Stack Developer",
-    organization: "Independent (Upwork & Direct Clients)",
+    organization: "Independent",
     location: "Remote",
     startDate: "Jun 2025",
     endDate: "Present",
     description:
-      "Building full-stack web applications and REST APIs for clients in construction, healthcare, and e-commerce. Delivering end-to-end products from requirements to production deployment on Vercel.",
+      "Building and hosting full-stack web applications and SaaS products for clients across different domains — from initial requirements and system design through to deployment. Comfortable owning a project end-to-end: gathering requirements directly with clients, designing the architecture and data model, building both frontend and backend, and deploying to production.",
     highlights: [
-      "Shipped DiagInfect-AI — a multi-tenant medical diagnostic SaaS platform",
-      "Shipped QuantiConstruct — a construction estimation platform with recursive formula engine",
-      "Maintained 5-star ratings and 100% job success on Upwork",
+      "Delivered client projects across different domains, including a municipal property management platform (case study, UML, implementation, and testing) and an intelligent equipment refurbishment marketplace for a startup",
+      "Handled requirements gathering directly with non-technical clients, translating real-world processes into system design",
+      "Deployed and hosted full-stack apps in production, not just delivered code",
     ],
   },
   {
-    id: "intern-2024",
+    id: "clubs-2024",
     type: "work",
-    role: "Full-Stack Developer Intern",
-    organization: "TechStart Algeria",
-    location: "Algiers, Algeria",
-    startDate: "Jul 2024",
-    endDate: "Sep 2024",
+    role: "Community Member & Workshop Organizer",
+    organization: "GDG Algiers · CyberNexus · CSE · Innov Bio",
+    location: "Tiaret & Algiers, Algeria",
+    startDate: "2024",
+    endDate: "Present",
     description:
-      "Contributed to the backend of a B2B subscription platform. Implemented JWT-based authentication with refresh token rotation, plan switching workflows, and feature-gated access control.",
+      "Active across several university and community clubs — GDG Algiers, CyberNexus (Developer, 2025/2026), CSE, and the InnovBio scientific/biology innovation club (2024/2025). Delivered hands-on workshops and organized club events and podcasts.",
     highlights: [
-      "Designed and implemented the plan upgrade/downgrade flow with email confirmation",
-      "Built subscription-based feature limiting middleware for three plan tiers",
-      "Reduced API response times by 35% through query optimization",
-    ],
-  },
-  {
-    id: "ta-2024",
-    type: "work",
-    role: "Teaching Assistant — Web Development",
-    organization: "Freelance (Online Courses)",
-    location: "Remote",
-    startDate: "Jan 2024",
-    endDate: "Jun 2024",
-    description:
-      "Created and delivered web development course content covering HTML, CSS, JavaScript, and browser fundamentals. Built course materials, exercises, and PPTX presentation decks.",
-    highlights: [
-      "Produced 40+ hours of structured course content",
-      "Built interactive coding exercises for 3 course modules",
+      "Delivered workshops with CSE and CyberNexus on web development bootcamps, Git, UML, and operating systems",
+      "Instructed the Frontend Development workshop for CyberNexus",
+      "Organized club events and podcasts alongside regular workshop delivery",
+      "Won Best Idea in a GDG Algiers competition, building GDG Impact Hub with a small team",
     ],
   },
   // ── Education ────────────────────────────────────────────────────────────
   {
-    id: "degree-2025",
+    id: "master-ai-2026",
     type: "education",
-    role: "Licence in Software Engineering",
-    organization: "University of Science and Technology — Houari Boumediene (USTHB)",
-    location: "Algiers, Algeria",
-    startDate: "Sep 2022",
-    endDate: "Jun 2025",
+    role: "Master's in Artificial Intelligence",
+    organization: "Ibn Khaldoun University",
+    location: "Tiaret, Algeria",
+    startDate: "Sep 2026",
+    endDate: "Present",
     description:
-      "Specialized in Software Engineering with a focus on distributed systems, algorithms, formal methods, and agile software development. Final Year Project: DiagInfect-AI medical diagnostic platform.",
-    highlights: [
-      "PFE: Designed and developed DiagInfect-AI from requirements to deployment",
-      "Studied formal methods, Prolog, cryptography, and software process models",
-      "Top 10% of cohort in Software Architecture coursework",
-    ],
+      "Continuing on to a Master's degree specializing in Artificial Intelligence, following a Licence in Computer Science.",
+    highlights: [],
   },
   {
-    id: "bac-2022",
+    id: "licence-cs-2023",
     type: "education",
-    role: "Baccalauréat — Sciences (Mathematics Stream)",
-    organization: "Lycée Frères Mentouri",
-    location: "Algiers, Algeria",
-    startDate: "Sep 2019",
-    endDate: "Jun 2022",
+    role: "Licence in Computer Science — Graduated Top of Class",
+    organization: "Ibn Khaldoun University",
+    location: "Tiaret, Algeria",
+    startDate: "Sep 2023",
+    endDate: "Jun 2026",
     description:
-      "Graduated with distinction in the Mathematics stream. Foundation in pure mathematics, physics, and computer science fundamentals.",
-    highlights: ["Graduated with Mention Très Bien (High Honours)"],
+      "Licence (LMD system) in Computer Science — Mathématiques et Informatique — with a third-year specialization in Information Systems (Systèmes d'Information). Graduated 1st in the cohort.",
+    highlights: [
+      "Graduated as major of promotion (1st in class)",
+      "Specialized in Information Systems (Systèmes d'Information) in the final year",
+      "Applied coursework directly to real projects — requirements engineering, UML design, and system architecture across client and team work",
+    ],
   },
 ];
 

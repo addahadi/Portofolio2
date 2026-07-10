@@ -17,13 +17,12 @@
     "JWT",
     "REST API"
   ],
-  "thumbnail": "https://placehold.co/800x450/1A56DB/FFFFFF?text=APEX",
+  "thumbnail": "/project_imgs/apex_landing_page.png",
   "screenshots": [
-    "https://placehold.co/1200x675/0F172A/FFFFFF?text=Landing+Page",
-    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=User+Dashboard",
-    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=Estimation+Category+Tree",
-    "https://placehold.co/1200x675/0F172A/FFFFFF?text=Admin+Formula+Editor",
-    "https://placehold.co/1200x675/1A56DB/FFFFFF?text=Mobile+App+%28Expo%29"
+    "/project_imgs/apex_landing_page.png",
+    "/project_imgs/apex_dashboard.png",
+    "/project_imgs/apex_category_calculation.png",
+    "/project_imgs/apex_modules_page.png"
   ],
   "liveUrl": "https://apex-ochre-gamma.vercel.app",
   "repoUrl": "https://github.com/addahadi/APEX",

@@ -1,0 +1,43 @@
+{
+  "slug": "devlevelup",
+  "title": "DevLevelUp",
+  "shortDescription": "Gamified daily-lesson platform for learning web development, built solo end-to-end and sold to a client.",
+  "fullDescription": "DevLevelUp is a full-stack learning platform that breaks web development into daily, bite-sized lessons instead of long, easy-to-abandon courses. The system is split into three parts I built and connected myself: an Express/PostgreSQL REST API, a React + Vite dashboard app where students actually learn, and a separate Astro marketing/landing site. Learners move through a Course → Module → Lesson hierarchy, take quizzes, and track progress per lesson and module, all wired to Clerk for authentication with webhook-based user syncing to the database. On top of the core LMS, I layered a gamification system — XP logs and unlockable achievements — to keep learners coming back daily, plus a personal study layer of drag-and-drop notes and folders so students could organize their own takeaways. An admin side of the app gives course/lesson/user management and analytics dashboards. It started as my own personal project; I later sold the finished platform to a client.",
+  "problem": "Most self-taught developers rely on long, generic course platforms where it's easy to enroll and never finish. There's no structure that breaks learning into small daily habits, tracks fine-grained progress per lesson, or rewards showing up consistently — so motivation drops off long before the course is complete.",
+  "solution": "DevLevelUp restructures learning around small daily lessons grouped into modules and courses, with quizzes and progress tracking at every level. XP and achievements turn consistent daily learning into a game, while personal notes and folders let students build their own reference material as they go — all backed by a proper multi-role system (student and admin) instead of a single flat course viewer.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "Astro",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Clerk",
+    "Vite",
+    "Tailwind CSS",
+    "REST API"
+  ],
+  "thumbnail": "/project_imgs/devlevelup_landing_page.png",
+  "screenshots": [
+    "/project_imgs/devlevelup_landing_page.png",
+    "/project_imgs/devlevelup-course_detail.png",
+    "/project_imgs/devlevelup_course_taking.png"
+  ],
+  "liveUrl": "https://devlevelup.vercel.app/",
+  "repoUrl": "https://github.com/addahadi/daily-lesson-platform",
+  "featured": false,
+  "year": 2025,
+  "projectType": "Client",
+  "role": "Full-Stack Developer",
+  "duration": "3 months",
+  "impact": [
+    "Designed and built the entire stack solo: an Express/PostgreSQL REST API, a React + Vite student/admin dashboard, and a separate Astro marketing site, unified under Clerk authentication with webhook-based user sync.",
+    "Modeled a full Course → Module → Lesson hierarchy with per-lesson and per-module progress tracking, enrollments, and quizzes with graded answers.",
+    "Built a gamification layer on top of the core LMS — XP logs and unlockable achievements — to encourage daily learning habits.",
+    "Added a personal study layer of drag-and-drop notes and folders (via dnd-kit) so students could organize their own lesson takeaways.",
+    "Shipped an admin side with course/lesson/user management and analytics dashboards.",
+    "Delivered end-to-end in ~3 months as a solo developer, then sold the finished platform to a client."
+  ],
+  "featuredMetric": { "value": "3 months", "label": "solo build, sold to client" }
+}

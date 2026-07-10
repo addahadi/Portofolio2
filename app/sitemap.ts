@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/posts";
+// import { getAllPosts } from "@/lib/posts";
 import { projects } from "@/data/projects";
 
 const BASE_URL = "https://yourportfolio.vercel.app"; // TODO: replace with real domain
@@ -10,9 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/skills",
     "/projects",
     "/experience",
-    "/testimonials",
+    // "/testimonials",
     "/books",
-    "/blog",
+    // "/blog",
     "/contact",
   ].map((path) => ({
     url: `${BASE_URL}${path}`,
@@ -28,12 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const blogRoutes = getAllPosts().map((p) => ({
-    url: `${BASE_URL}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: "never" as const,
-    priority: 0.6,
-  }));
+  // const blogRoutes = getAllPosts().map((p) => ({
+  //   url: `${BASE_URL}/blog/${p.slug}`,
+  //   lastModified: new Date(p.date),
+  //   changeFrequency: "never" as const,
+  //   priority: 0.6,
+  // }));
 
-  return [...staticRoutes, ...projectRoutes, ...blogRoutes];
+  return [...staticRoutes, ...projectRoutes];
 }

@@ -1,90 +1,98 @@
 import type { Book } from "@/types";
 
-// TODO: Replace cover URLs with actual book cover images before launch
 export const books: Book[] = [
-  // Tech
+  // Computer Science
   {
     id: "b1",
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    cover: "https://placehold.co/150x220/1a1a2e/AAFF00?text=Clean+Code",
-    category: "Tech",
+    title: "Object-Oriented Analysis and Design with Applications",
+    author: "Grady Booch",
+    cover: "https://placehold.co/150x220/1a1a2e/AAFF00?text=OOA%26D",
+    category: "Computer Science",
     takeaway:
-      "Code is read far more often than it is written. The naming of a variable is not a trivial decision — it's documentation. This book permanently changed how I think about the craft of writing code.",
+      "The foundational text that shaped how I think about decomposing complex systems into objects. Booch's emphasis on notation and process gave me a disciplined approach to modeling before writing a single line of code.",
     rating: 5,
   },
   {
     id: "b2",
-    title: "Designing Data-Intensive Applications",
-    author: "Martin Kleppmann",
-    cover: "https://placehold.co/150x220/0d1117/61DAFB?text=DDIA",
-    category: "Architecture",
+    title: "Domain-Driven Design",
+    author: "Eric Evans",
+    cover: "https://placehold.co/150x220/0d1117/61DAFB?text=DDD",
+    category: "Computer Science",
     takeaway:
-      "The most thorough book I've read on distributed systems. Taught me why PostgreSQL replication works the way it does, and why eventually consistent systems are harder to reason about than they appear.",
+      "Ubiquitous language, bounded contexts, and aggregates — DDD gave me the vocabulary to bridge the gap between domain experts and code. The strategic patterns are as important as the tactical ones.",
     rating: 5,
   },
   {
     id: "b3",
-    title: "The Pragmatic Programmer",
-    author: "David Thomas & Andrew Hunt",
-    cover: "https://placehold.co/150x220/2d1b69/CCFF66?text=Pragmatic",
-    category: "Tech",
+    title: "Designing Data-Intensive Applications",
+    author: "Martin Kleppmann",
+    cover: "https://placehold.co/150x220/2d1b69/CCFF66?text=DDIA",
+    category: "Computer Science",
     takeaway:
-      "Treat your career like a craft. The chapter on tracer bullets — shipping thin end-to-end slices before building out — reshaped how I approach new projects entirely.",
+      "The most thorough book I've read on distributed systems. Taught me why replication works the way it does, and why eventually consistent systems are harder to reason about than they appear.",
     rating: 5,
   },
   {
     id: "b4",
-    title: "You Don't Know JS",
-    author: "Kyle Simpson",
-    cover: "https://placehold.co/150x220/F7DF1E/000?text=YDKJS",
-    category: "Tech",
+    title: "Software Requirements",
+    author: "Karl Wiegers & Joy Beatty",
+    cover: "https://placehold.co/150x220/F7DF1E/000?text=Software+Req",
+    category: "Computer Science",
     takeaway:
-      "Everyone uses JavaScript. Very few people actually understand its prototype chain, closures, and the event loop at a deep level. This series fixed the gaps I didn't know I had.",
-    rating: 4,
+      "Requirements are the foundation everything else is built on. This book taught me to treat requirements engineering as a first-class discipline — elicitation, analysis, specification, and validation each deserve serious attention.",
+    rating: 5,
   },
-  // Leadership
   {
     id: "b5",
-    title: "The Manager's Path",
-    author: "Camille Fournier",
-    cover: "https://placehold.co/150x220/0A0A0A/AAFF00?text=Mgr+Path",
-    category: "Leadership",
+    title: "Software Architecture: The Hard Parts",
+    author: "Neal Ford, Mark Richards, Pramod Sadalage & Zhamak Dehghani",
+    cover: "https://placehold.co/150x220/0A0A0A/AAFF00?text=Arch+Hard+Parts",
+    category: "Computer Science",
     takeaway:
-      "I read this as a developer, not a manager — and it made me a better teammate. Understanding what good managers do (and what makes their job hard) fundamentally changed how I communicate upward.",
-    rating: 4,
+      "Architecture is about trade-offs, not best practices. This book gave me frameworks for making and documenting difficult decomposition decisions — when to split, when to stay monolithic, and how to evaluate the cost of coupling.",
+    rating: 5,
   },
+  // Philosophy
   {
     id: "b6",
-    title: "The Lean Startup",
-    author: "Eric Ries",
-    cover: "https://placehold.co/150x220/ff6b35/FFFFFF?text=Lean+Startup",
-    category: "Product",
+    title: "The Gay Science",
+    author: "Friedrich Nietzsche",
+    cover: "https://placehold.co/150x220/4a0e0e/e8c547?text=Gay+Science",
+    category: "Philosophy",
     takeaway:
-      "Build-measure-learn changed how I think about side projects. Ship the ugliest viable version first, then let real users tell you what matters. Saved me from building features nobody wanted.",
-    rating: 4,
+      "Where Nietzsche first proclaims the death of God and introduces the eternal recurrence. The joyful wisdom — the idea that knowledge and laughter are not opposites — profoundly shaped how I approach intellectual work.",
+    rating: 5,
   },
-  // Self-Development
   {
     id: "b7",
-    title: "Deep Work",
-    author: "Cal Newport",
-    cover: "https://placehold.co/150x220/1a1a1a/AAFF00?text=Deep+Work",
-    category: "Self-Development",
+    title: "Human, All Too Human",
+    author: "Friedrich Nietzsche",
+    cover: "https://placehold.co/150x220/1a1a1a/c0c0c0?text=Human+All+Too",
+    category: "Philosophy",
     takeaway:
-      "Distraction-free deep work is a competitive advantage, not a lifestyle choice. This book made me block my mornings for focused coding and turn off notifications permanently. The output difference is measurable.",
+      "Nietzsche's break from metaphysics and romanticism. The aphoristic style forces you to think independently about every single passage. A masterclass in questioning assumptions you didn't know you held.",
     rating: 5,
   },
   {
     id: "b8",
-    title: "Atomic Habits",
-    author: "James Clear",
-    cover: "https://placehold.co/150x220/e8f5e9/1b5e20?text=Atomic+Habits",
-    category: "Self-Development",
+    title: "Thus Spoke Zarathustra",
+    author: "Friedrich Nietzsche",
+    cover: "https://placehold.co/150x220/1c2541/ffd700?text=Zarathustra",
+    category: "Philosophy",
     takeaway:
-      "Systems beat goals. The 1% better every day framing is deceptively powerful. I use the habit stacking technique to make consistent code review and documentation writing automatic.",
-    rating: 4,
+      "The Übermensch, the eternal recurrence, the will to power — all woven into a poetic narrative. Nietzsche's most ambitious work challenged me to create my own values rather than inherit them.",
+    rating: 5,
+  },
+  {
+    id: "b9",
+    title: "Beyond Good and Evil",
+    author: "Friedrich Nietzsche",
+    cover: "https://placehold.co/150x220/2c003e/ff6b6b?text=Beyond+G%26E",
+    category: "Philosophy",
+    takeaway:
+      "A devastating critique of dogmatic philosophy and conventional morality. Nietzsche's demand that we question every 'truth' — especially the comfortable ones — is a habit I carry into engineering and life alike.",
+    rating: 5,
   },
 ];
 
-export const bookCategories = ["Tech", "Architecture", "Leadership", "Product", "Self-Development"] as const;
+export const bookCategories = ["Computer Science", "Philosophy"] as const;

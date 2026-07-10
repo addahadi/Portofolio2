@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, ChevronLeft } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
+import ScreenshotLightbox from "@/components/ScreenshotLightbox";
 import { projects } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
 import { isRealUrl } from "@/lib/utils";
@@ -147,23 +148,11 @@ export default function ProjectDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* Screenshots (bug fixed — now shows every screenshot) */}
+            {/* Screenshots */}
             {project.screenshots.length > 0 && (
               <div>
                 <h3 className="font-heading font-bold text-lg text-text-light mb-4">Screenshots</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {project.screenshots.map((src, i) => (
-                    <div key={i} className="relative h-48 rounded-xl overflow-hidden bg-black/5">
-                      <Image
-                        src={src}
-                        alt={`${project.title} screenshot ${i + 1}`}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                    </div>
-                  ))}
-                </div>
+                <ScreenshotLightbox screenshots={project.screenshots} projectTitle={project.title} />
               </div>
             )}
 

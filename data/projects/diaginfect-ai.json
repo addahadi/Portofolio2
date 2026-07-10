@@ -18,14 +18,14 @@
     "AI/ML",
     "REST API"
   ],
-  "thumbnail": "https://placehold.co/800x450/1e5aa8/FFFFFF?text=DiagInfect-AI",
+  "thumbnail": "/project_imgs/dia_infect_landing_page.png",
   "screenshots": [
-    "https://placehold.co/1200x675/1e5aa8/FFFFFF?text=Landing+Page",
-    "https://placehold.co/1200x675/104ED8/FFFFFF?text=Doctor+Dashboard",
-    "https://placehold.co/1200x675/2e7d32/FFFFFF?text=AI+Risk+Score+%2B+XAI",
-    "https://placehold.co/1200x675/1e5aa8/FFFFFF?text=Manager+Subscription"
+    "/project_imgs/dia_infect_landing_page.png",
+    "/project_imgs/dia_infect_patients.png",
+    "/project_imgs/dia_infect_prediction.png",
+    "/project_imgs/dia-infect_reports.png"
   ],
-  "liveUrl": "https://diainfectai.vercel.app",
+  "liveUrl": "https://dia-infect.vercel.app/",
   "repoUrl": "https://github.com/addahadi/DiaInfect",
   "featured": true,
   "year": 2026,

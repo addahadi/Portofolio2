@@ -1,0 +1,43 @@
+{
+  "slug": "intelligent-equipment-refurbishment",
+  "title": "Intelligent Equipment Refurbishment Platform",
+  "shortDescription": "A two-sided marketplace where maintenance companies sell used equipment into a refurbishment pipeline, and clients buy the results with full repair traceability.",
+  "fullDescription": "This platform digitizes the whole workflow of a real refurbishment startup. On one side, maintenance companies submit used equipment or spare parts through a public offer form, no account needed. An administrator reviews each offer, and once accepted, the item enters a traceable refurbishment pipeline — disassembly, cleaning, diagnosis, repair, reassembly, testing — before it's either listed for sale or recycled (with any salvageable parts from a scrapped item listed individually). On the other side, clients browse the resulting catalog, search and filter by category, brand, or quality grade, save favorites, and buy an item while being able to inspect its entire repair history for peace of mind. A client approached me to build this from the ground up, and I ran the full case study and requirements gathering, designed the UML (use-case, class, and sequence diagrams), and built out both the frontend and backend.",
+  "problem": "Refurbished-equipment businesses typically have no real system tying together the two sides of their operation: sourcing used equipment from maintenance companies, and reselling repaired items to customers who have no way to verify what work was actually done. Without structured intake or a visible repair trail, it's hard to run the business at scale or earn buyer trust.",
+  "solution": "A platform that formalizes both sides: a simple public form lets companies propose equipment for refurbishment, an admin dashboard turns accepted offers into tracked items moving through a defined repair pipeline, and a client-facing catalog shows each item's full traceability timeline alongside its price, quality grade, and warranty — so buyers can see exactly how an item was restored before they purchase it.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "React Query",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Neon",
+    "Zod",
+    "JWT",
+    "Cloudinary",
+    "REST API"
+  ],
+  "thumbnail": "/project_imgs/refurbishment_home_page.png",
+  "screenshots": [
+    "/project_imgs/refurbishment_home_page.png",
+    "/project_imgs/refurbishment_inventaire.png",
+    "/project_imgs/refurbishment_offre.png"
+  ],
+  "liveUrl": "https://intelligent-equipment-refurbishment.vercel.app/",
+  "repoUrl": "https://github.com/addahadi/Intelligent-Equipment-Refurbishment-Platform",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Startup",
+  "role": "Full-Stack Developer",
+  "impact": [
+    "Ran the full case study and requirements-gathering directly with the client, turning a real refurbishment business's process into formal functional requirements and business rules.",
+    "Designed the UML use-case, class, and sequence diagrams that structured the system before any code was written.",
+    "Modeled a variable, branching repair pipeline (decomposition → cleaning → diagnosis → repair/recycle → test → sale) with a decisive diagnostic verdict that determines each item's path.",
+    "Built the full-stack app: React/TypeScript frontend and an Express/PostgreSQL (Neon) backend with JWT auth, Zod-validated bilingual (FR/AR) endpoints, and Cloudinary-backed image uploads.",
+    "Designed a traceability system so every sold item keeps a permanent, viewable repair history as proof of the refurbishment work done."
+  ],
+  "featuredMetric": { "value": "2-sided", "label": "marketplace + traceability engine" }
+}

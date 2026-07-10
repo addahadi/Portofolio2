@@ -1,0 +1,46 @@
+{
+  "slug": "municipality-matters",
+  "title": "Municipality Matters",
+  "shortDescription": "A web platform that brings municipal property management online — renting, auctions, bills, and resident requests, all in one place.",
+  "fullDescription": "Municipality Matters helps a local municipality manage its property and serve residents online instead of through paperwork and in-person visits. Built as a graduate project for a client studying Law, I led a small team through the whole journey: sitting down with the client to understand how municipal property actually gets managed, mapping that out as a formal design (UML diagrams), building the platform, and testing it end to end. The result gives residents a place to browse available municipal properties, bid on rental auctions, pay their invoices, and submit requests, complaints, or reviews — while municipal staff manage the property catalog, run auctions, and process everything coming in from citizens, and administrators oversee accounts and see platform-wide stats. Under the hood it's a modern React/TypeScript web app on the frontend with a Node.js/Express API on the backend, bilingual to serve both Arabic and French/English speaking residents.",
+  "problem": "Municipal property management — rentals, auctions of municipal land/property, resident complaints, and administrative requests — is typically handled through disconnected manual processes or paperwork, making it slow for citizens to interact with their municipality and hard for staff to track property status, auction bids, and service requests in one place.",
+  "solution": "A single platform, split by role: municipal employees list properties and run auctions with live bid validation, residents browse listings, bid, pay bills, and file requests or complaints from home, and administrators keep an eye on accounts and overall activity — replacing what used to be scattered paperwork and office visits with one online system.",
+  "category": "Web App",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "shadcn/ui",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "JWT",
+    "Zod",
+    "Cloudinary",
+    "i18next",
+    "REST API"
+  ],
+  "thumbnail": "/project_imgs/municipality_landing_page.png",
+  "screenshots": [
+    "/project_imgs/municipality_landing_page.png",
+    "/project_imgs/municipality_auction.png",
+    "/project_imgs/municipality_admin.png",
+    "/project_imgs/municipality_invoices.png",
+    "/project_imgs/municipality_properties.png"
+  ],
+  "liveUrl": "https://municipality-matters.vercel.app/",
+  "repoUrl": "https://github.com/addahadi/municipality-matters",
+  "featured": true,
+  "year": 2026,
+  "projectType": "Client",
+  "role": "Team Lead · Full-Stack Developer",
+  "impact": [
+    "Ran the case study and requirements gathering directly with the client (a Law student), translating legal/administrative property workflows into a concrete system design.",
+    "Designed the UML use-case and class diagrams that structured the whole system before implementation began.",
+    "Built a role-based platform for Citizen, Employee, and Admin, covering property listings, rental auctions with live bid validation, invoicing, requests, complaints, reviews, and announcements.",
+    "Built a well-organized, secure backend (Node.js/Express/PostgreSQL) that keeps user accounts, payments, and property records safe and easy to maintain.",
+    "Led the team through implementation and testing, delivering a working end-to-end system from design through to a tested build."
+  ],
+  "featuredMetric": { "value": "3 roles", "label": "case study → UML → build → test" }
+}

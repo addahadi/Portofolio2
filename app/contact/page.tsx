@@ -40,9 +40,12 @@ export default function ContactPage() {
         setForm({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
+        const errorData = await res.json().catch(() => ({}));
+        setErrors({ message: errorData.error || "Failed to send email. Please try again." });
         setStatus("error");
       }
     } catch {
+      setErrors({ message: "Network error occurred while sending the email." });
       setStatus("error");
     }
   };
@@ -139,7 +142,9 @@ export default function ContactPage() {
                   {status === "error" && (
                     <div className="flex items-center gap-2 text-red-400 text-sm font-body bg-red-500/10 px-4 py-3 rounded-lg">
                       <AlertCircle size={16} />
-                      Something went wrong. Please email me directly.
+                      {errors.message && errors.message.startsWith("Server") || errors.message?.startsWith("EmailJS") 
+                        ? errors.message 
+                        : "Something went wrong. Please email me directly."}
                     </div>
                   )}
 

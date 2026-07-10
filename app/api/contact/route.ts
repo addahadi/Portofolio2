@@ -50,16 +50,40 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  // TODO: Send email via Resend
-  // const resend = new Resend(process.env.RESEND_API_KEY);
-  // await resend.emails.send({
-  //   from: "portfolio@yourdomain.com",
-  //   to: process.env.CONTACT_EMAIL!,
-  //   subject: `[Portfolio] ${subject}`,
-  //   html: `<p>From: ${name} (${email})</p><p>${message}</p>`,
-  // });
+  // Check env vars first
+  if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID || !process.env.EMAILJS_PUBLIC_KEY) {
+    console.error("[EmailJS Error] Missing environment variables. Did you restart the server?");
+    return NextResponse.json({ error: "Server configuration error: Missing EmailJS keys" }, { status: 500 });
+  }
 
-  console.log("[Contact]", { name, email, subject, message: message.slice(0, 100) });
+  // Send email via EmailJS REST API
+  const emailJsUrl = "https://api.emailjs.com/api/v1.0/email/send";
+  const payload = {
+    service_id: process.env.EMAILJS_SERVICE_ID,
+    template_id: process.env.EMAILJS_TEMPLATE_ID,
+    user_id: process.env.EMAILJS_PUBLIC_KEY,
+    accessToken: process.env.EMAILJS_PRIVATE_KEY, // Optional, but recommended for security
+    template_params: {
+      name,
+      email,
+      subject,
+      message,
+    },
+  };
+
+  const emailRes = await fetch(emailJsUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!emailRes.ok) {
+    const errorText = await emailRes.text();
+    console.error("[EmailJS Error]", errorText);
+    return NextResponse.json({ error: `EmailJS Error: ${errorText}` }, { status: 500 });
+  }
 
   return NextResponse.json({ ok: true });
 }
